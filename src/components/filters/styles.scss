@@ -1,0 +1,28 @@
+.filters {
+  margin-top: 5%;
+  width: 75vw;
+  min-width: 320px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: calc(5vw - 15px);
+  justify-content: center;
+
+
+  &__label {
+    background-color: white;
+    border: 1px solid lightskyblue;
+    color: lightskyblue;
+    border-radius: 10px;
+    padding: 10px 0;
+    text-align: center;
+    cursor: pointer;
+    transition:background-color .3s ease-in;
+
+    &__active {
+      color: snow;
+      border-color: white;
+      background-color: lightskyblue;
+      font-weight: bold;
+    }
+  }
+}

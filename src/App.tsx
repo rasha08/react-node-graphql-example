@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { map } from 'ramda';
+
+import { useSocialItemsContext } from './context/social-items';
+import { SocialEntity } from './shared/models';
+import { BaseLayout, Card, Filters } from './components';
+import { useInfiniteScroll } from './shared/hooks';
 
 const App: React.FC = () => {
+  const {
+    state: { items, currentPage },
+    setCurrentPage,
+  } = useSocialItemsContext();
+
+  const loadMore = () => setCurrentPage(currentPage + 1);
+
+  useInfiniteScroll(loadMore);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BaseLayout>
+      <Filters />
+      {map(
+        (item: SocialEntity) => (
+          <Card item={item} key={item.title} />
+        ),
+        items
+      )}
+    </BaseLayout>
   );
-}
+};
 
 export default App;

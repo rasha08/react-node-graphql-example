@@ -1,0 +1,11 @@
+.base-layout {
+  margin: 0 10%;
+
+  &__container {
+    display: grid;
+
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,171 @@
+.card {
+  position: relative;
+  box-shadow: 1px 1px 2px 1px lightgray;
+  border-radius: 10px;
+  margin-top: 5%;
+  width: 75vw;
+  min-width: 320px;
+
+  &__header {
+    padding: 1% 5%;
+
+    display: grid;
+    grid-template-columns: 70% 30%;
+
+    &--author {
+      display: grid;
+      grid-template-columns: 130px auto;
+      align-items: center;
+
+      &--image {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        padding: 2%;
+        border: 1px solid lightgray;
+      }
+      &--name {
+        font-size: 30px;
+      }
+    }
+    &--status {
+      display: grid;
+      justify-self: end;
+      align-self: start;
+      color: white;
+      padding: 2% 10%;
+      border-radius: 30px;
+
+      &.trending {
+        background-color: indianred;
+      }
+
+      &.task-open {
+        background-color: lightskyblue;
+      }
+
+      &.task-complete {
+        background-color: lightgreen;
+      }
+    }
+  }
+
+  &__body {
+    padding: 1% 5%;
+
+
+    &--description {
+      color: gray;
+    }
+
+    &--submission {
+      margin: 2% 0;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      display: grid;
+
+      &--info {
+        display: grid;
+        grid-template-columns: 35% 25% 30%;
+        grid-gap: 5%;
+        align-items: center;
+
+        &--image {
+          padding: 5%;
+          width: 100%;
+        }
+
+        &--pledge {
+          &--total {
+            color: green;
+            font-weight: bold;
+            font-size: 30px;
+            margin-block-end: 0;
+
+          }
+
+          &--goal {
+            font-size: 20px;
+            color: lightgray;
+            margin-block-start: 0;
+          }
+
+          &--count {
+            font-weight: bold;
+            font-size: 30px;
+            color: gray;
+            margin-block-end: 0;
+          }
+
+          &--pledgers {
+            font-size: 20px;
+            color: lightgray;
+            margin-block-start: 0;
+          }
+        }
+
+        &--action {
+          padding: 5%;
+          margin: 10%;
+          background-color: transparent;
+          border: 1px solid lightskyblue;
+          border-radius: 20px;
+          color: lightskyblue;
+        }
+      }
+
+      &--footer {
+        display: grid;
+        grid-template-columns: 20% auto 20%;
+        justify-items: center;
+        background-color: whitesmoke;
+        color: darkgray;
+
+        &--link {
+          justify-self: start;
+          padding: 15px;
+        }
+
+        &--submissions {
+          justify-self: start;
+          padding: 15px;
+        }
+
+        &--claim {
+          justify-self: end;
+          color: white;
+          background-color: lightskyblue;
+          padding: 15px;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+    justify-items: center;
+    background-color: whitesmoke;
+    color: darkgray;
+    font-weight: bold;
+
+    &--comments {
+      justify-self: start;
+      padding: 15px;
+    }
+
+    &--share {
+      justify-self: start;
+      padding: 15px;
+    }
+
+    &--menu-trigger {
+      justify-self: end;
+      padding: 0 15px;
+      align-self: start;
+      font-size: 30px;
+    }
+  }
+}
